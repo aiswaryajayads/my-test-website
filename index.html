@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My LIFF App</title>
+</head>
+<body>
+    <h1>Welcome to My LIFF App</h1>
+    <button onclick="sendMessage()">Send Message</button>
+
+    <script>
+        function sendMessage() {
+            // Use LIFF API to send a message
+            liff.sendMessages([
+                {
+                    'type': 'text',
+                    'text': 'Hello from My LIFF App!'
+                }
+            ])
+            .then(() => {
+                alert('Message sent!');
+            })
+            .catch(error => {
+                alert('Error sending message: ' + error);
+            });
+        }
+    </script>
+</body>
+</html>
+
